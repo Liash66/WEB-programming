@@ -19,14 +19,7 @@ echo "\nVariable 2: $b";
 
 echo "12";
 
-$last_month = 1187.23;
-$current_month = 1089.98;
+$lastMonth = 1187.23;
+$currentMonth = 1089.98;
 $difference = $lastMonth - $currentMonth;
 echo "Difference: $difference";
-
-
-$num_languages = 4;
-$months = 11;
-$days = $months * 16;
-$days_per_language = $days / $num_languages;
-echo "Days per language: $days_per_language";
