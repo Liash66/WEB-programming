@@ -23,3 +23,10 @@ $last_month = 1187.23;
 $this_month = 1089.98;
 $difference = $last_month - $this_month;
 echo "\nDifference: $difference";
+
+
+$num_languages = 4;
+$months = 11;
+$days = $months * 16;
+$days_per_language = $days / $num_languages;
+echo "\nDays per language: $days_per_language";
