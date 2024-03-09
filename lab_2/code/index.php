@@ -316,3 +316,10 @@ $mas = [2, 4, 6];
 if (count($mas) == 3) {
     echo "\n" . count($mas);
 }
+echo "\n";
+
+$str = "x";
+foreach (range(1, 20) as $width) {
+    echo $str . "\n";
+    $str .= "x";
+}
