@@ -43,3 +43,93 @@ $answer -= 2;
 $answer /= 2;
 $answer -= $my_num;
 echo "\n $answer";
+
+
+$a = 10;
+$b = 3;
+$c = $a % $b;
+echo "$a % $b = $c";
+
+if ($c == 0) {
+    echo "\nДелится";
+} else {
+    echo "\nДелится с остатком $c";
+}
+
+$st = pow(2, 10);
+echo "\n$st";
+$k = sqrt(245);
+echo "\n$k";
+$mas = [4, 2, 5, 19, 13, 0, 10];
+$sum = 0;
+foreach ($mas as $i)
+{
+    $sum += $i**2;
+}
+echo "\n" . sqrt($sum);
+
+$k1 = round(sqrt(379));
+echo "\n$k1";
+$k2 = round(sqrt(379), 1);
+echo "\n$k2";
+$k3 = round(sqrt(379), 2);
+echo "\n$k3";
+$round_mas = [];
+$round_mas["floor"] = floor(sqrt(579));
+$round_mas["ceil"] = ceil(sqrt(579));
+echo "\n" . $round_mas["floor"];
+echo "\n" . $round_mas["ceil"];
+
+$min_number = min(4, -2, 5, 19, -130, 0, 10);
+$max_number = max(4, -2, 5, 19, -130, 0, 10);
+echo "\n $min_number, $max_number";
+
+echo "Random number: " . rand(1, 100);
+$mas = [];
+echo "\n";
+foreach (range(0, 9) as $i)
+{
+    $mas[] = rand(1, 100);
+    echo $mas[$i] . " ";
+}
+
+$a = 1;
+$b = 2;
+echo "\n" . abs($a - $b);
+echo "\n" . abs($a - $b);
+$mas = [1, 2, -1, -2, 3, -3];
+foreach (range(0, count($mas) - 1) as $i) {
+    if ($mas[$i] < 0)
+    {
+        $mas[$i] = abs($mas[$i]);
+    }
+    echo $mas[$i] . " ";
+}
+
+$a = 30;
+$mas = [];
+foreach (range(1, $a) as $i)
+{
+    if ($a % $i == 0)
+    {
+        $mas[] = $i;
+    }
+}
+foreach ($mas as $i)
+{
+    echo $i . " ";
+}
+
+$mas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$sum = 0;
+$k = 0;
+foreach ($mas as $i)
+{
+    $sum += $i;
+    $k++;
+    if ($sum > 10)
+    {
+        break;
+    }
+}
+echo $k;
