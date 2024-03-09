@@ -318,8 +318,32 @@ if (count($mas) == 3) {
 }
 echo "\n";
 
+
 $str = "x";
 foreach (range(1, 20) as $width) {
     echo $str . "\n";
     $str .= "x";
 }
+
+
+$mas = [1, 2, 3, 4];
+$average = array_sum($mas) / count($mas);
+echo "\n" . $average;
+
+$sum = array_sum(range(1, 100));
+echo "\n" . $sum;
+
+$mas = [1, 4, 9];
+$sqrt_mas = array_map('sqrt', $mas);
+echo "\n";
+print_r($sqrt_mas);
+
+$alphabet = range('a', 'z');
+$numbers = range(1, 26);
+$result = array_combine($alphabet, $numbers);
+echo "\n";
+print_r($result);
+
+$str = '1234567890';
+$sum = array_sum(str_split($str, 2));
+echo "\n" . $sum;
