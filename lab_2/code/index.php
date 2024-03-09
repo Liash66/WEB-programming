@@ -266,3 +266,53 @@ $mas = ['a', 'b', 'c', 'd', 'e'];
 echo "\n" . count($mas);
 
 echo "\n" . $mas[count($mas) - 1] . " " . $mas[count($mas) - 2];
+
+
+function checkSum($num1, $num2)
+{
+    if ($num1 + $num2 > 10)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+function checkEqual($num1, $num2)
+{
+    if ($num1 == $num2)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+if ($k == 0) echo 'верно';
+
+$age = 25;
+if ($age < 10 || $age > 99)
+{
+    echo "\nЧисло меньше 10 или больше 99";
+}
+else
+{
+    $sum = array_sum(str_split($age));
+    if ($sum <= 9)
+    {
+        echo "\nСумма цифр однозначна";
+    }
+    else
+    {
+        echo "\nСумма цифр двузначна";
+    }
+}
+
+$mas = [2, 4, 6];
+if (count($mas) == 3) {
+    echo "\n" . count($mas);
+}
