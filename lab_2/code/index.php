@@ -134,10 +134,65 @@ foreach ($mas as $i)
 }
 echo $k;
 
+
 function printStringReturnNumber($str)
 {
     echo $str;
     return intval($str);
 }
+
 $my_num = printStringReturnNumber("221");
+
 echo $my_num;
+
+
+function increaseEnthusiasm($str)
+{
+    return $str . "!";
+}
+
+echo "\n" . increaseEnthusiasm("Do it");
+
+function repeatThreeTimes($str)
+{
+    return $str . $str . $str;
+}
+
+echo "\n" . repeatThreeTimes("go");
+
+echo "\n" . increaseEnthusiasm(repeatThreeTimes("go"));
+
+function cut($str, $k = 10)
+{
+    return substr($str, 0, $k);
+}
+
+echo "\n" . cut("qwertyuiopasdfg");
+
+function printArrayRecursively($mas, $i = 0) {
+    if ($i < count($mas)) {
+        echo $mas[$i] . " ";
+        printArrayRecursively($mas, $i + 1);
+    }
+}
+
+$mas = [1, 2, 3, 4, 5];
+echo "\n";
+printArrayRecursively($mas);
+
+function sumDigitsToOne($num) {
+    $sum = 0;
+    while ($num > 0) {
+        $sum += $num % 10;
+        $num = (int)($num / 10);
+    }
+    if ($sum > 9) {
+        return sumDigitsToOne($sum);
+    } else {
+        return $sum;
+    }
+}
+
+$num = 98765;
+$result = sumDigitsToOne($num);
+echo "\n" . $result;
