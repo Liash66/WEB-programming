@@ -133,3 +133,11 @@ foreach ($mas as $i)
     }
 }
 echo $k;
+
+function printStringReturnNumber($str)
+{
+    echo $str;
+    return intval($str);
+}
+$my_num = printStringReturnNumber("221");
+echo $my_num;
