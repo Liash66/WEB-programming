@@ -196,3 +196,73 @@ function sumDigitsToOne($num) {
 $num = 98765;
 $result = sumDigitsToOne($num);
 echo "\n" . $result;
+
+
+$mas = ["x"];
+for ($i = 1; $i < 10; $i++)
+{
+    $mas[] = $mas[$i - 1] . "x";
+}
+
+function arrayFill($str, $k)
+{
+    $mas = [$str];
+    for ($i = 1; $i < $k; $i++)
+    {
+        $mas[] = $mas[$i - 1] . $str;
+    }
+}
+
+echo "\n" . arrayFill("x", 5);
+
+$mas = [[1, 2, 3], [4, 5], [6]];
+$sum = 0;
+foreach ($mas as $i)
+{
+    foreach ($i as $j)
+    {
+        $sum += $j;
+    }
+}
+echo "\n" . $sum;
+
+$mas = [];
+$rows = 3;
+$cols = 3;
+$count = 1;
+for ($i = 0; $i < $rows; $i++)
+{
+    $row = [];
+    for ($j = 0; $j < $cols; $j++)
+    {
+        $row[] = $count++;
+    }
+    $mas[] = $row;
+}
+foreach ($mas as $row)
+{
+    echo "\n[" . implode(", ", $row) . "]";
+}
+
+$mas = [2, 5, 3, 9];
+$result = ($mas[0] * $mas[1]) + ($mas[2] * $mas[3]);
+echo "\n" . $result;
+
+$user = [
+    'name' => 'Андрей',
+    'surname' => 'Кошелев',
+    'patronymic' => 'Игоревич'
+];
+echo "\n" . $user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic'];
+
+$date = [
+    'year' => "2024",
+    'month' => "03",
+    'day' => "09"
+];
+echo "\n" . $date['year'] . '-' . $date['month'] . '-' . $date['day'];
+
+$mas = ['a', 'b', 'c', 'd', 'e'];
+echo "\n" . count($mas);
+
+echo "\n" . $mas[count($mas) - 1] . " " . $mas[count($mas) - 2];
