@@ -50,7 +50,7 @@ $b = 3;
 $c = $a % $b;
 echo "$a % $b = $c";
 
-if ($c == 0) {
+if ($c === 0) {
     echo "\nДелится";
 } else {
     echo "\nДелится с остатком $c";
@@ -110,7 +110,7 @@ $a = 30;
 $mas = [];
 foreach (range(1, $a) as $i)
 {
-    if ($a % $i == 0)
+    if ($a % $i === 0)
     {
         $mas[] = $i;
     }
@@ -270,29 +270,15 @@ echo "\n" . $mas[count($mas) - 1] . " " . $mas[count($mas) - 2];
 
 function checkSum($num1, $num2)
 {
-    if ($num1 + $num2 > 10)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return $num1 + $num2 > 10;
 }
 
 function checkEqual($num1, $num2)
 {
-    if ($num1 == $num2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return $num1 === $num2;
 }
 
-if ($k == 0) echo 'верно';
+if ($k === 0) echo 'верно';
 
 $age = 25;
 if ($age < 10 || $age > 99)
@@ -313,7 +299,7 @@ else
 }
 
 $mas = [2, 4, 6];
-if (count($mas) == 3) {
+if (count($mas) === 3) {
     echo "\n" . count($mas);
 }
 echo "\n";
