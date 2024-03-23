@@ -11,4 +11,4 @@ $new_str = preg_replace_callback('/\d+/', function($matches)
     return $num * $num * $num;
 }, $str);
 
-echo "\n", $new_str;
+echo "\n" . $new_str;
