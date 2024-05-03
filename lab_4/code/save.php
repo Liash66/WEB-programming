@@ -1,26 +1,48 @@
 <?php
-function redirectToHome(): void
-{
-    header('Location: /');
 
-    exit();
+require_once 'vendor/autoload.php'; // Подключаем библиотеку Google API PHP Client
+
+use Google\Client;
+use Google\Service\Sheets;
+
+// Функция для отправки данных в Google Sheets
+function writeToGoogleSheets($category, $title, $description)
+{
+    $client = new Google\Client();
+    $client->setAuthConfig('code/credentials.json'); // Путь к вашему файлу ключа доступа
+
+    $client->addScope(Google\Service\Sheets::SPREADSHEETS);
+    $service = new Google\Service\Sheets($client);
+
+    $spreadsheetId = '1M6B1Ca_mxxe90fFw7ArMNLuhzJqjbOAtqMK90la';
+    $range = 'Sheet1!A1:C1'; // Диапазон, куда вы хотите записать данные
+
+    $values = [
+        [$category, $title, $description]
+    ];
+
+    $body = new Google\Service\Sheets\ValueRange([
+        'values' => $values
+    ]);
+
+    $params = [
+        'valueInputOption' => 'RAW'
+    ];
+
+    $result = $service->spreadsheets_values->append($spreadsheetId, $range, $body, $params);
+
+    return $result;
 }
 
-if (false === isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['description']))
+if (isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['description']))
 {
-    redirectToHome();
+    $category = $_POST['category'];
+    $title = $_POST['title'];
+    $desc = $_POST['description'];
+
+    // Отправляем данные в Google Sheets
+    writeToGoogleSheets($category, $title, $desc);
 }
 
-$category = $_POST['category'];
-$title = $_POST['title'];
-$desc = $_POST['description'];
-
-$filePath = "categories/{$category}/{$title}.txt";
-
-if (false === file_put_contents($filePath, $desc))
-{
-    throw new Exception('Something went wrong...');
-}
-chmod($filePath, 0777);
-
-redirectToHome();
+header('Location: /');
+exit();
