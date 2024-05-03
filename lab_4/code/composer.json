@@ -1,4 +1,6 @@
 {
     "name": "web/lab_4",
-    "require": {}
+    "require": {
+        "google/apiclient": "2.15.0"
+    }
 }
